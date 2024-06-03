@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <div>
+  <h4 class="modal-title">Participantes do Treinamento</h4>
+  <h6 class="mt-2">Total: {{totalParticipantes}}</h6>
+</div>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <ul>
+    <li class="d-flex justify-content-between mb-3" *ngFor="let participant of participantes">{{ participant.nome }}
+      <button type="button" class="btn btn-danger btn-sm" (click)="deleteParticipante(participant.id)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </li>
+  </ul>
+  <input type="text" [(ngModel)]="participante.Nome" placeholder="Novo Participante" class="form-control mt-2">
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="addParticipant()">Adicionar Participante</button>
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Close click')">Fechar</button>
+</div>

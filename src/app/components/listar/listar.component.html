@@ -1,0 +1,43 @@
+<div class="container-fluid mt-3">
+  <h3>Lista de Treinamentos</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nº</th>
+        <th scope="col">Status</th>
+        <th scope="col">Treinamento</th>
+        <th scope="col">Entidade</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">Data Inicial</th>
+        <th scope="col">Data Final</th>
+        <th scope="col">Participantes</th>
+        <th scope="col">Editar / Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dados">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.status }}</td>
+        <td>{{ item.conteudo }}</td>
+        <td>{{ item.entidade }}</td>
+        <td>{{ item.responsavel }}</td>
+        <td>{{ item.dataInicial | datePipe }}</td>
+        <td>{{ item.dataFinal | datePipe }}</td>
+        <td>
+          <button class="btn btn-secondary btn-sm" (click)="mostrarParticipantes(item)">
+            <i class="fa fa-eye"></i>
+            Mostrar Participantes</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm mr-2" (click)="editTraining(item.id)">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteTraining(item.id)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

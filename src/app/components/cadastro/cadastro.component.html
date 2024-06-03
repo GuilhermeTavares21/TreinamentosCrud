@@ -1,0 +1,43 @@
+
+<div class="d-flex justify-content-center">
+<div class="border border-secondary p-3 border-opacity-75 rounded-lg shadow mt-3" id="borda">
+  <h3>Cadastrar Treinamento...</h3>
+  <hr/>
+<form (ngSubmit)="onSubmit()" #trainingForm="ngForm">
+
+  <div class="mb-3">
+    <label for="status" class="form-label">Status</label>
+    <!-- <input type="text" class="form-control" id="status" name="status" aria-describedby="emailHelp" required [(ngModel)]="treinamento.Status"> -->
+    <select class="custom-select" [(ngModel)]="treinamento.Status" id="status" name="status" required>
+      <option value="Agendado">Agendado</option>
+      <option value="Em Andamento">Em andamento</option>
+      <option value="Concluido">Concluido</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="treinamento" class="form-label">Treinamento</label>
+    <input type="text" class="form-control" id="treinamento" name="treinamento" aria-describedby="emailHelp" required [(ngModel)]="treinamento.Conteudo">
+  </div>
+  <div class="mb-3">
+    <label for="entidade" class="form-label">Entidade</label>
+    <input type="text" class="form-control" id="entidade" name="entidade" aria-describedby="emailHelp" required [(ngModel)]="treinamento.Entidade">
+  </div>
+  <div class="mb-3">
+    <label for="responsavel" class="form-label">Responsável</label>
+    <input type="text" class="form-control" id="responsavel" name="responsavel" aria-describedby="emailHelp" required [(ngModel)]="treinamento.Responsavel">
+  </div>
+  <div class="mb-3">
+    <label for="start-date" class="form-label">Data Inicial</label>
+    <input type="date" class="form-control" id="start-date" name="start-date" aria-describedby="emailHelp" required [(ngModel)]="treinamento.DataInicial">
+  </div>
+  <div class="mb-3">
+    <label for="final-date" class="form-label">Data Final</label>
+    <input type="date" class="form-control" id="final-date" name="final-date" aria-describedby="emailHelp" required [(ngModel)]="treinamento.DataFinal">
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="submit" class="btn btn-danger btn-lg" routerLink="/lista">Voltar</button>
+    <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+  </div>
+</form>
+</div>
+</div>
